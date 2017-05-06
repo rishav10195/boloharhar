@@ -42,7 +42,7 @@ $navbar-default-bg: #010101;
     border-color: white;
 }
 footer {
-    maring-top: 45px;
+    margin-top: 35px;
     padding-top: 5px;
     border-top: 1px solid #eaeaea;
     color: #777;
@@ -55,7 +55,9 @@ footer small {
     float: left;
     list-style: none;
 }
+
+
 footer ul li {
-    float: left;
-    margin-left: 15px;
+    float: right;
+    margin-left: 25px;
 }
