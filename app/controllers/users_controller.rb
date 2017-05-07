@@ -6,13 +6,26 @@ class UsersController < ApplicationController
     def create
        @user = User.new(user_params)
        if @user.save
-           flash[:success] = "Welcome #{@user.username}, You are one of us now!"
+           flash[:success] = "Welcome #{@user.username}, You're one of us now!"
            redirect_to articles_path
         else
             render :new
-        end
+       end
     end
     
+    def edit
+        @user= User.find(params[:id])
+    end
+    
+    def update
+        @user = User.find(params[:id])
+        if @user.update(user_params)
+            flash[:success] = "#{@user.username}, You are updated now!"
+            redirect_to articles_path
+        else
+            render :edit
+        end
+    end
     
     
     private
