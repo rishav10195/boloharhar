@@ -35,8 +35,9 @@ class ArticlesController<ApplicationController
         @article = Article.new(article_params)
         @article.user = current_user
         if @article.save
+            session[:user_id] = @user.id
             flash[:success]="Succesful bro!"
-            redirect_to article_path(@article)
+            redirect_to user_path(@user)
         else
             render :new
         end
