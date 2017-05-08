@@ -7,6 +7,14 @@
 </div>
 
 <h4 align='center'> <%= @user.username %>'s articles</h4>
+<div align ='center'>
+    <% if logged_in? && current_user.admin? %>
+        <%= link_to 'Delete User', user_path(@user), method: :delete, 
+        data: { confirm: "Are you sure ADMIN, it will delete all their article as well?" },
+        class: "btn btn-danger btn-xs" %>
+    <% end %>
+</div>
+
 <div align = 'center'>
     <%= will_paginate  @user_articles %>
 </div>
