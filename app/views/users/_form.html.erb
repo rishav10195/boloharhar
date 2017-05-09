@@ -2,7 +2,7 @@
 <%= render 'shared/errors', obj: @user %>
         
 
-    
+ 
 <div class = 'row'>
     <div class = 'col-xs-12'>
         
@@ -14,7 +14,7 @@
                     <%= f.label :username %>
                 </div>
                 
-                 <div class="col-sm-6">
+                 <div class="col-sm-7">
                      <%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                     <%= f.label :email%>
                 </div>
                 
-                <div class="col-sm-8">
+                <div class="col-sm-7">
                     <%= f.email_field :email, class: "form-control", placeholder: "Enter email", autofocus: true %>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                     <%= f.label :password %>
                 </div>
                 
-                <div class="col-sm-8">
+                <div class="col-sm-7">
                     <%= f.password_field :password, class: "form-control", placeholder: "Enter password", autofocus: true %>
                 </div>
             </div>
