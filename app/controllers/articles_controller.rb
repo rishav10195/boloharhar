@@ -1,4 +1,4 @@
-class ArticlesController<ApplicationController
+ class ArticlesController<ApplicationController
     
     before_action :set_article, only: [:edit, :update, :show, :destroy]         #always have b4 action in order
     before_action :require_user, except: [:index, :show]
@@ -31,26 +31,24 @@ class ArticlesController<ApplicationController
     end
     
     def create
-        
         @article = Article.new(article_params)
         @article.user = current_user
         if @article.save
-            session[:user_id] = @user.id
-            flash[:success]="Succesful bro!"
-            redirect_to user_path(@user)
+            flash[:success]="Succesfully posted!"
+            redirect_to article_path(@article)
         else
             render :new
         end
     end
     
     def destroy
-        @article = Article.find(params[:id])
         @article.destroy
-        flash[:danger]="deletion Succesful bro!"
+        flash[:danger]="deletion Succes!"
         redirect_to articles_path
     end
     
     private
+    
     def set_article
         @article = Article.find(params[:id])
     end
@@ -61,7 +59,7 @@ class ArticlesController<ApplicationController
     
     def require_same_user
         if current_user != @article.user && !current_user.admin?
-            flash[:danger] = "You can only edit or delete your own bakhodi."
+            flash[:danger] = "You can only edit or delete your own post."
             redirect_to root_path
         end
     end
