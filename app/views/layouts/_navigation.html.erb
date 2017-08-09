@@ -9,15 +9,15 @@
         <span class="icon-bar"></span>
       </button>
       
-      <%= link_to 'The B..blog', root_path, class: "navbar-brand", id: "logo" %>
+      <%= link_to 'The Oblog', root_path, class: "navbar-brand", id: "logo" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
        
-        <li> <%= link_to ' Articles', articles_path %></li>
-        <li> <%= link_to 'Bakchods', users_path %> </li>
+        <li> <%= link_to 'Articles', articles_path %></li>
+        <li> <%= link_to 'Comrades!', users_path %> </li>
         
         <% if logged_in? %>  
           <li class="dropdown">
